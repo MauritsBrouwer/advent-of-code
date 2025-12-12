@@ -1,6 +1,7 @@
-import { readFile } from "../utils/readFile";
+import { readFile } from "../../utils/readFile";
 
-const input = readFile('input2');
+const content = readFile('input');
+const input = content.trim().split("\n")
 const dialStart = 50;
 
 // Answer 1.
