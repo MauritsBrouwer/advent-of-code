@@ -37,4 +37,31 @@ function sumOfInvalidIds(input: string[]) {
   return sum;
 }
 
+function alternativeSumOfIds(input: string[]) {
+  let sum = 0;
+
+  for(const range of input) {
+    const startRange = Number(range.split('-')[0]);
+    const endRange = Number(range.split('-')[1]);
+
+    for (let id = startRange; id <= endRange; id++ ) {
+      const productIdString = id.toString()
+      const patternPossibilities = productIdString.split('').map((_, index) => productIdString.slice(0, index))
+
+      for (const pattern of patternPossibilities) {
+        let regex = new RegExp(`${pattern}`, 'g');
+        const filterNumberBasedOnPattern = productIdString.replace(regex, '');
+
+        if (filterNumberBasedOnPattern.trim().length === 0) {
+          sum += Number(productIdString);
+          break;
+        }
+      }
+    }
+  }
+
+  return sum;
+}
+
 console.log(sumOfInvalidIds(convertedInput));
+console.log(alternativeSumOfIds(convertedInput));
