@@ -40,6 +40,6 @@ function sumOfJoltage(input: string[]): number {
   return sumOfBatteries;
 }
 
-console.log(sumOfJoltage(convertedInput)); // 172516781546707
+console.log(sumOfJoltage(convertedInput));
 // console.log(sumOfTurnedOnBatteries(testInput));
 
