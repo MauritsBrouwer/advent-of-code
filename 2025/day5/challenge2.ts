@@ -16,7 +16,6 @@ function countFreshIngredients(input: string[]) {
   for (const range of reorderedList) {
     if (!updatedRangesList.length) {
       updatedRangesList.push(range);
-
     } else {
       const ingredientRange = range.split('-');
       const startRange = Number(ingredientRange[0]);
